@@ -37,24 +37,6 @@ This repository provides reusable skill definitions that can be loaded into AI c
 |-------|-------------|------|
 | [WordPress](contribute/wordpress/SKILL.md) | Contribute to WordPress core (hooks, coding standards, Trac workflow) | wordpress, php, cms, open-source, core-contribution |
 
-### Extend
-
-| Skill | Description | Tags |
-|-------|-------------|------|
-| [Firefox Extension](extend/firefox-extension/SKILL.md) | Build WebExtensions for Mozilla Firefox (MV2/MV3, APIs, web-ext, AMO) | firefox, webextension, browser-extension, mozilla, amo, manifest-v3 |
-| [Thunderbird Extension](extend/thunderbird-extension/SKILL.md) | Build MailExtensions for Thunderbird (messenger.* APIs, compose, ATN) | thunderbird, mailextension, email-extension, mozilla, atn, messenger-api |
-| [KDE Plasmoid](extend/kde-plasmoid/SKILL.md) | Build Plasma widgets with Python backend and QML UI (Plasma 6+) | kde, plasma, plasmoid, widget, qml, qt, desktop |
-| [Vagrant](extend/vagrant/SKILL.md) | Create development environments with Vagrant (boxes, provisioners, plugins) | vagrant, virtualization, devops, virtualbox, docker, infrastructure |
-
-### Frameworks
-
-| Skill | Description | Tags |
-|-------|-------------|------|
-| [Qt C++](frameworks/qt-cpp/SKILL.md) | Cross-platform desktop apps with Qt C++ (signals/slots, widgets, CMake) | qt, c++, gui, desktop, qt6, cmake, cross-platform |
-| [PyQt](frameworks/pyqt/SKILL.md) | Desktop applications with PyQt5/PyQt6/PySide6 (widgets, signals, layouts, packaging) | python, qt, pyqt, pyside, gui, desktop, pyqt6, pyqt5 |
-| [Django](frameworks/django/SKILL.md) | Web applications with Django (ORM, views, templates, REST API, DRF) | python, django, web-framework, orm, rest-api, drf |
-| [LlamaIndex](frameworks/llama-index/SKILL.md) | Build LLM applications with LlamaIndex (RAG, agents, vector stores) | python, llm, rag, llamaindex, ai, vector-store, agents |
-
 ## Skill Format
 
 Each skill follows the [skillreg.dev specification](https://skillreg.dev/docs/skill-md-reference):
