@@ -23,14 +23,19 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Thunderbird Extension](extend/thunderbird-extension/SKILL.md) | Build MailExtensions for Thunderbird - messenger.* APIs, compose, ATN | 1,067 | thunderbird, mailextension, email-extension, mozilla, atn, messenger-api |
 | [KDE Plasmoid](extend/kde-plasmoid/SKILL.md) | Build Plasma widgets - Python backend, QML UI, Plasma 6+ | 749 | kde, plasma, plasmoid, widget, qml, qt, desktop |
 | [Vagrant](extend/vagrant/SKILL.md) | Development environments - providers, provisioners, multi-machine, plugins, troubleshooting | 1,097 | vagrant, virtualization, devops, virtualbox, infrastructure |
+| [OpenCode Plugin](extend/opencode/SKILL.md) | Develop plugins, tools, and extensions for OpenCode AI agent - MCP, tools, SDK | 976 | opencode, plugin, ai-agent, mcp, tool-development |
 
 ### Frameworks
 
 | Skill | Description | Lines | Tags |
 |-------|-------------|-------|------|
 | [Qt C++](frameworks/qt-cpp/SKILL.md) | Cross-platform desktop apps - signals/slots, QML, threading, CMake, deployment | 1,204 | qt, c++, gui, desktop, qt6, cmake, cross-platform, qml |
-| [PyQt](frameworks/pyqt/SKILL.md) | Desktop applications - PyQt5/PyQt6/PySide6, widgets, signals, layouts, packaging | 1,104 | python, qt, pyqt, pyside, gui, desktop |
+| [PyQt](frameworks/pyqt/SKILL.md) | Desktop applications - PyQt5/PyQt6/PySide6, widgets, signals, layouts, threading, testing | 1,902 | python, qt, pyqt, pyside, gui, desktop |
 | [Django](frameworks/django/SKILL.md) | Web applications - ORM, views, DRF, middleware, caching, async views, deployment | 1,464 | python, django, web-framework, orm, rest-api, drf, async |
+| [Django Ninja](frameworks/django-ninja/SKILL.md) | Fast REST APIs with Pydantic - schemas, authentication, pagination, OpenAPI docs | 1,869 | python, django, rest-api, pydantic, openapi, type-safe |
+| [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework - responsive design, dark mode, component patterns | 1,751 | css, frontend, responsive, design-system, utility-first |
+| [Celery](frameworks/celery/SKILL.md) | Distributed task queue - Redis/RabbitMQ brokers, periodic tasks, Django integration | 1,250 | python, task-queue, async, distributed, celery |
+| [pytest](frameworks/pytest/SKILL.md) | Python testing framework - fixtures, parametrization, mocking, plugins, Django/Flask | 1,001 | python, testing, tdd, fixtures, unit-test |
 | [LlamaIndex](frameworks/llama-index/SKILL.md) | LLM applications - RAG, retrievers, agents, vector stores, streaming, evaluation | 1,130 | python, llm, rag, llamaindex, ai, vector-store, agents |
 
 ### Contribute
