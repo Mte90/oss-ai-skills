@@ -28,6 +28,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [mGBA Scripting](extend/mgba/SKILL.md) | Lua scripting for mGBA emulator - game automation, memory hacking, cheats, callbacks | ~800 | lua, emulator, gba, gameboy-advance, scripting, memory-hacking |
 | [OpenRCT2 Plugin](extend/openrct2/SKILL.md) | JavaScript/TypeScript plugins for OpenRCT2 - game actions, UI windows, hooks, multiplayer | 877 | openrct2, plugin, javascript, typescript, game-modding, rollercoaster-tycoon |
 | [Kate Plugin](extend/kate-plugin/SKILL.md) | Develop C++ plugins for Kate text editor - KTextEditor interface, CMake, Qt widgets | ~600 | kate, kde, text-editor, plugin, c++, qt, kde-frameworks |
+| [Playwright Visual Regression](extend/playwright-visual-regression/SKILL.md) | Visual regression testing with Playwright - screenshot comparison, baselines, CI/CD (based on maxrihter/claude-skill-visual-regression) | 715 | playwright, visual-regression, screenshot, testing, e2e, snapshot |
 
 ### Frameworks
 
@@ -47,7 +48,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Django Ninja](frameworks/django-ninja/SKILL.md) | Fast REST APIs with Pydantic - schemas, authentication, pagination, OpenAPI docs | 1,869 | python, django, rest-api, pydantic, openapi, type-safe |
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework - responsive design, dark mode, component patterns | 1,751 | css, frontend, responsive, design-system, utility-first |
 | [Celery](frameworks/celery/SKILL.md) | Distributed task queue - Redis/RabbitMQ brokers, periodic tasks, Django integration | 1,250 | python, task-queue, async, distributed, celery |
-| [pytest](frameworks/pytest/SKILL.md) | Python testing framework - fixtures, parametrization, mocking, plugins, Django/Flask | 1,001 | python, testing, tdd, fixtures, unit-test |
+| [pytest](frameworks/pytest/SKILL.md) | Python testing framework - fixtures, parametrization, asyncio, Django, mocking, coverage, parallel | 1,481 | python, testing, tdd, fixtures, unit-test |
 | [httpx](frameworks/httpx/SKILL.md) | Modern async HTTP client - sync/async API, HTTP/2, connection pooling, retries | ~1,500 | python, http, async, client, network |
 | [aiohttp](frameworks/aiohttp/SKILL.md) | Async HTTP server/client - WebSocket, SSE, middleware, streaming | ~1,700 | python, http, async, server, websocket, sse |
 | [Pydantic](frameworks/pydantic/SKILL.md) | Data validation - type hints, models, serialization, settings, FastAPI | ~1,700 | python, validation, pydantic, serialization, settings |
