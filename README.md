@@ -42,9 +42,11 @@ This repository provides reusable skill definitions that can be loaded into AI c
 |   ↳ [pyqt-dialogs](frameworks/pyqt/dialogs/SKILL.md) | Dialogs - QFileDialog, QMessageBox, custom dialogs | 409 | python, qt, pyqt, dialogs, ui |
 |   ↳ [pyqt-testing](frameworks/pyqt/testing/SKILL.md) | Testing - pytest-qt, qtbot, waitSignal, fixtures | 444 | python, qt, pyqt, testing, pytest |
 |   ↳ [pyqt-styling](frameworks/pyqt/styling/SKILL.md) | QSS styling - selectors, properties, dark theme | 668 | python, qt, pyqt, styling, qss, css |
+|   ↳ [pyqt-multimedia](frameworks/pyqt/multimedia/SKILL.md) | Audio, video, camera, recording | ~700 | python, qt, pyqt, multimedia, audio, video |
 | [pygame](frameworks/pygame/SKILL.md) | Python 2D game development - sprites, surfaces, events, sound, fonts, game loops, collision | 549 | python, game-development, 2d-games, pygame, graphics |
 | [ratatui](frameworks/ratatui/SKILL.md) | Rust TUI framework - terminal UI, widgets, layouts, event handling, cross-platform | 651 | rust, tui, terminal, cli, user-interface |
-| [Django](frameworks/django/SKILL.md) | Web applications - ORM, views, DRF, middleware, caching, async views, deployment | 1,464 | python, django, web-framework, orm, rest-api, drf, async |
+| [Django](frameworks/django/SKILL.md) | Web applications - ORM, views, DRF, middleware, caching, async views, deployment, security | 1,464 | python, django, web-framework, orm, rest-api, drf, async, hub |
+| [Django Unfold](frameworks/django-unfold/SKILL.md) | Modern Django admin theme - customization, components, actions, filters, integrations | 653 | python, django, admin, unfold, theme, dashboard |
 | [Django Ninja](frameworks/django-ninja/SKILL.md) | Fast REST APIs with Pydantic - schemas, authentication, pagination, OpenAPI docs | 1,869 | python, django, rest-api, pydantic, openapi, type-safe |
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework - responsive design, dark mode, component patterns | 1,751 | css, frontend, responsive, design-system, utility-first |
 | [Celery](frameworks/celery/SKILL.md) | Distributed task queue - Redis/RabbitMQ brokers, periodic tasks, Django integration | 1,250 | python, task-queue, async, distributed, celery |
@@ -55,8 +57,15 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [SQLAlchemy](frameworks/sqlalchemy/SKILL.md) | Python SQL toolkit and ORM - queries, relationships, async, Alembic migrations | 1,179 | python, orm, database, sql, alembic, async |
 | [LlamaIndex](frameworks/llama-index/SKILL.md) | LLM applications - RAG, retrievers, agents, vector stores, streaming, evaluation | 1,130 | python, llm, rag, llamaindex, ai, vector-store, agents |
 | [TurboDRF](frameworks/turbodrf/SKILL.md) | Fast Django REST framework - automatic OpenAPI, caching, JWT auth | ~600 | python, django, rest-api, openapi, fast |
-| [django-allauth](frameworks/django-allauth/SKILL.md) | Django authentication - local accounts, OAuth, email verification, MFA | ~700 | python, django, authentication, oauth, mfa |
+| [django-allauth](frameworks/django-allauth/SKILL.md) | django-allauth package - local accounts, OAuth, email verification, MFA | ~700 | python, django, authentication, oauth, mfa, allauth |
 | [BPCore Engine](frameworks/bpcore-engine/SKILL.md) | Lua game framework for GBA - sprites, entities, collision, audio, multiplayer | ~1,100 | lua, gba, game-engine, gameboy-advance |
+
+### Tool
+
+| Skill | Description | Lines | Tags |
+|-------|-------------|-------|------|
+| [Redis](tool/redis/SKILL.md) | In-memory database - caching, pub/sub, sessions, rate limiting, data structures | 315 | redis, database, caching, pub-sub, sessions, rate-limiting |
+| [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, multi-stage builds, production, CI/CD | 389 | docker, docker-compose, containerization, deployment, ci-cd |
 
 ### Contribute
 
