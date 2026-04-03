@@ -27,6 +27,8 @@ SQLite is an embedded relational database. The entire database is stored in a si
 - **ACID** - Full transactional support
 - **Cross-platform** - Works everywhere
 
+> See [Slicker.me SQLite Features](https://slicker.me/sqlite/features.htm) for a comprehensive feature overview.
+
 ---
 
 ## Python Integration
