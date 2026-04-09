@@ -71,6 +71,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, multi-stage builds, production, CI/CD | 389 | docker, docker-compose, containerization, deployment, ci-cd |
 | [Redis](tool/redis/SKILL.md) | In-memory database - caching, pub/sub, sessions, rate limiting, data structures | 315 | redis, database, caching, pub-sub, sessions, rate-limiting |
 | [SQLite](tool/sqlite/SKILL.md) | Embedded database - SQL queries, schema design, Python integration, FTS5, optimization | ~600 | sqlite, database, sql, embedded, python |
+| [Waydroid](tool/waydroid/SKILL.md) | Android on Linux - container-based Android with Wayland, GPU acceleration, GAPPS | ~657 | waydroid, android, container, linux, wayland, gapps |
 
 ## Skill Format
 

@@ -3,7 +3,7 @@ name: tailwind
 description: Utility-first CSS framework v4 with CSS-first configuration, @theme directive, and the new Oxide engine.
 metadata:
   author: OSS AI Skills
-  version: 2.0.0
+  version: 2.1.0
   tags: [css, tailwind, v4, utility-first, oxide-engine]
 ---
 
@@ -12,6 +12,37 @@ metadata:
 Tailwind CSS v4 is a complete rewrite of the framework, built on a new Rust-based Oxide engine that's 10x faster. The biggest change: **configuration is now done in CSS**, not JavaScript. No more `tailwind.config.js` for most projects.
 
 **Browser support:** Safari 16.4+, Chrome 111+, Firefox 128+
+
+## The Oxide Engine (Performance)
+
+Tailwind v4 uses a new Rust-based **Oxide** engine with dramatically improved performance:
+
+| Operation | v3 Speed | v4 Speed (Oxide) | Improvement |
+|-----------|----------|-----------------|-------------|
+| Cold build | 8s | 2.1s | **3.78x faster** |
+| Incremental | 450ms | 51ms | **8.8x faster** |
+| HMR (Hot Module Reload) | 350ms | 12ms | **28x faster** |
+| Memory usage | Higher | Lower | ~50% reduction |
+
+### Why It's Faster
+
+- **Rust-native**: Core processing in Rust, not JavaScript
+- **Parallel processing**: Uses all CPU cores efficiently
+- **Better caching**: Improved incremental build detection
+- **Optimized CSS generation**: Less overhead in utility generation
+
+### Requirements
+
+```bash
+# Node.js 18+ required for Oxide engine
+node --version  # Should be 18 or higher
+
+# Install with Vite (recommended for best performance)
+npm install tailwindcss @tailwindcss/vite
+
+# Or PostCSS (also fast)
+npm install tailwindcss @tailwindcss/postcss
+```
 
 ## Installation
 
@@ -275,20 +306,234 @@ Need to keep your old `tailwind.config.js`? Use `@config`:
 
 Note: `corePlugins`, `safelist`, and `separator` options are not supported in v4.
 
+## The @theme Directive (Complete Reference)
+
+The `@theme` directive is the heart of v4 configuration. It defines design tokens that become CSS variables and utility classes.
+
+### Color System
+
+```css
+@theme {
+  /* Brand colors using OKLCH - recommended for P3 gamut */
+  --color-brand: oklch(65% 0.25 250);
+  --color-brand-50: oklch(98% 0.02 250);
+  --color-brand-100: oklch(95% 0.05 250);
+  --color-brand-200: oklch(90% 0.1 250);
+  --color-brand-300: oklch(80% 0.15 250);
+  --color-brand-400: oklch(70% 0.2 250);
+  --color-brand-500: oklch(65% 0.25 250);
+  --color-brand-600: oklch(55% 0.25 250);
+  --color-brand-700: oklch(45% 0.25 250);
+  --color-brand-800: oklch(35% 0.25 250);
+  --color-brand-900: oklch(25% 0.25 250);
+  --color-brand-950: oklch(15% 0.2 250);
+
+  /* Semantic colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Extend existing colors */
+  --color-blue-950: oklch(20% 0.15 240);
+}
+```
+
+### OKLCH Color Syntax
+
+v4 uses OKLCH by default for better color accuracy:
+
+```css
+/* Syntax: oklch(lightness chroma hue [opacity]) */
+--color-primary: oklch(60% 0.18 250);
+--color-translucent: oklch(60% 0.18 250 / 50%);
+```
+
+**Benefits of OKLCH:**
+- P3 color gamut support (more vibrant colors)
+- Predictable interpolation (no more gray shifts in gradients)
+- CSS native (no runtime conversion)
+
+### Spacing Scale
+
+```css
+@theme {
+  /* Add custom spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-72: 18rem;
+  --spacing-84: 21rem;
+  --spacing-96: 24rem;
+  
+  /* Spacing for specific use cases */
+  --spacing-header: 4rem;
+  --spacing-card: 1.5rem;
+}
+```
+
+### Breakpoints
+
+```css
+@theme {
+  /* Add custom breakpoints */
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 140rem;
+  
+  /* Modify existing */
+  --breakpoint-sm: 30rem;  /* 480px */
+  --breakpoint-md: 40rem;  /* 640px */
+}
+```
+
+### Shadows
+
+```css
+@theme {
+  /* Custom shadows */
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px oklch(65% 0.25 250 / 50%);
+  --shadow-inner-lg: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+```
+
+### Typography
+
+```css
+@theme {
+  /* Custom fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Clash Display", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Font sizes */
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+  
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+```
+
+### Animations
+
+```css
+@theme {
+  /* Custom animations */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-fade-out: fade-out 0.5s ease-out;
+  --animate-slide-in-up: slide-in-up 0.3s ease-out;
+  --animate-slide-in-down: slide-in-down 0.3s ease-out;
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-spin-slow: spin 2s linear infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce-slow: bounce 2s infinite;
+  --animate-shake: shake 0.5s ease-in-out;
+  
+  /* Keyframes are still needed */
+  --animate-enter: enter 0.3s ease-out;
+  --animate-leave: leave 0.2s ease-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+```
+
+### @theme Flags
+
+You can use CSS-wide keywords as values:
+
+```css
+@theme {
+  /* Use initial to not extend the default */
+  --color-gray-500: initial;  /* Removes the default gray-500 */
+  
+  /* Use inherit when needed */
+  --color-inherit: inherit;
+  
+  /* Use unset to reset */
+  --font-family: unset;
+}
+```
+
+### Inline Theme Values
+
+Use `--inline-*` to generate values that don't create CSS variables:
+
+```css
+@theme {
+  --animate-bounce: bounce 1s infinite;
+  --animate-spin: spin 1s linear infinite;
+  
+  /* These create variables but utilities also use them */
+}
+```
+
 ## Migration from v3
 
-### Key Breaking Changes
+### Complete Breaking Changes Table
 
-| Feature | v3 | v4 |
-|---------|----|----|
-| Import | `@tailwind base` | `@import "tailwindcss"` |
-| Config | `tailwind.config.js` | `@theme` in CSS |
-| Ring | `ring` (3px) | `ring-3` |
-| Shadow | `shadow` | `shadow-sm` |
-| Outline | `outline-none` | `outline-hidden` |
-| Border default | `gray-200` | `currentColor` |
-| Dark mode | Config option | Automatic |
-| theme() | `theme(colors.red.500)` | `var(--color-red-500)` |
+| Feature | v3 | v4 | Action Required |
+|---------|----|----|----|
+| Import | `@tailwind base/components/utilities` | `@import "tailwindcss"` | Replace all directives |
+| Config | `tailwind.config.js` | `@theme` in CSS | Rewrite to @theme |
+| Ring | `ring` (3px default) | `ring-3` | Add `-3` suffix |
+| Shadow | `shadow` | `shadow-sm` | Shift all shadows down |
+| Shadow | `shadow-sm` | `shadow-xs` | Shift down |
+| Shadow | `shadow-md` | `shadow` | Remove `-md` |
+| Shadow | `shadow-lg` | `shadow-md` | Remove `-lg` |
+| Shadow | `shadow-xl` | `shadow-lg` | Remove `-xl` |
+| Shadow | `shadow-2xl` | `shadow-xl` | Remove `-2xl` |
+| Outline | `outline-none` | `outline-hidden` | Rename utility |
+| Border | `gray-200` default | `currentColor` | Add explicit colors |
+| Blur | `blur` | `blur-sm` | Add `-sm` suffix |
+| Blur | `blur-sm` | `blur-xs` | Shift down |
+| Blur | `blur-md` | `blur` | Remove `-md` |
+| Blur | `blur-lg` | `blur-md` | Remove `-lg` |
+| Blur | `blur-xl` | `blur-lg` | Remove `-xl` |
+| Opacity | `bg-opacity-50` | `bg-red-500/50` | Use `/` modifier |
+| Arbitrary | `bg-[--var]` | `bg-(--var)` | Change `[]` to `()` |
+| Grid | `grid-cols-[a,b]` | `grid-cols-[a_b]` | Use `_` not `,` |
+| Important | `!bg-red-500` | `bg-red-500!` | Move `!` to end |
+| Theme fn | `theme('colors.red')` | `var(--color-red-500)` | Use CSS variables |
+| Dark mode | Config option | Automatic | Remove config |
+| Separator | `_` in arbitrary | `_` | Same, but fewer cases |
+| Preflight | Various resets | Updated | Check dialog/button |
 
 ### Upgrade Tool
 
