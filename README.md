@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)   
 
 A comprehensive collection of AI assistant skills (SKILL.md files) following the [skillreg.dev](https://skillreg.dev/docs/skill-md-reference) specification, designed to help contribute to and extend open-source projects (for plugins).
+*Note: we test the majority of them and improving based on asking to the agents to extend the skills based on their experience.*
 
 ## What is this?
 
@@ -24,7 +25,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Kate Plugin](extend/kate-plugin/SKILL.md) | Develop C++ plugins for Kate text editor - KTextEditor interface, CMake, Qt widgets | ~600 | kate, kde, text-editor, plugin, c++, qt, kde-frameworks |
 | [KDE Plasmoid](extend/kde-plasmoid/SKILL.md) | Build Plasma widgets - Python backend, QML UI, Plasma 6+ | 749 | kde, plasma, plasmoid, widget, qml, qt, desktop |
 | [mGBA Scripting](extend/mgba/SKILL.md) | Lua scripting for mGBA emulator - game automation, memory hacking, cheats, callbacks | ~800 | lua, emulator, gba, gameboy-advance, scripting, memory-hacking |
-| [OpenCode Plugin](extend/opencode/SKILL.md) | Develop plugins, tools, and extensions for OpenCode AI agent - MCP, tools, SDK | 976 | opencode, plugin, ai-agent, mcp, tool-development |
+| [OpenCode Plugin](extend/opencode/SKILL.md) | Develop plugins, tools, and extensions for OpenCode AI agent - MCP, tools, SDK | 1346 | opencode, plugin, ai-agent, mcp, tool-development |
 | [OpenRCT2 Plugin](extend/openrct2/SKILL.md) | JavaScript/TypeScript plugins for OpenRCT2 - game actions, UI windows, hooks, multiplayer | 877 | openrct2, plugin, javascript, typescript, game-modding, rollercoaster-tycoon |
 | [Playwright Visual Regression](extend/playwright-visual-regression/SKILL.md) | Visual regression testing with Playwright - screenshot comparison, baselines, CI/CD (based on maxrihter/claude-skill-visual-regression) | 715 | playwright, visual-regression, screenshot, testing, e2e, snapshot |
 | [Thunderbird Extension](extend/thunderbird-extension/SKILL.md) | Build MailExtensions for Thunderbird - messenger.* APIs, compose, ATN | 1,067 | thunderbird, mailextension, email-extension, mozilla, atn, messenger-api |
