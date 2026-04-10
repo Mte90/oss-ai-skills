@@ -22,7 +22,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 |-------|-------------|-------|------|
 | [Firefox Extension](extend/firefox-extension/SKILL.md) | Build WebExtensions for Firefox - MV2/MV3, APIs, web-ext, AMO publishing | 796 | firefox, webextension, browser-extension, mozilla, amo, manifest-v3 |
 | [GIMP Plugin](extend/gimp-plugin/SKILL.md) | GIMP 3.0+ plugins with Python 3 - GEGL operations, image manipulation, UI dialogs | 1,156 | python, gimp, image-processing, graphics, plugin, gegl |
-| [Kate Plugin](extend/kate-plugin/SKILL.md) | Develop C++ plugins for Kate text editor - KTextEditor interface, CMake, Qt widgets | ~600 | kate, kde, text-editor, plugin, c++, qt, kde-frameworks |
+| [Kate Plugin](extend/kate-plugin/SKILL.md) | Develop C++ plugins for Kate text editor - KTextEditor interface, CMake, Qt widgets | ~441 | kate, kde, text-editor, plugin, c++, qt, kde-frameworks |
 | [KDE Plasmoid](extend/kde-plasmoid/SKILL.md) | Build Plasma widgets - Python backend, QML UI, Plasma 6+ | 749 | kde, plasma, plasmoid, widget, qml, qt, desktop |
 | [mGBA Scripting](extend/mgba/SKILL.md) | Lua scripting for mGBA emulator - game automation, memory hacking, cheats, callbacks | ~800 | lua, emulator, gba, gameboy-advance, scripting, memory-hacking |
 | [OpenCode Plugin](extend/opencode/SKILL.md) | Develop plugins, tools, and extensions for OpenCode AI agent - MCP, tools, SDK | 1346 | opencode, plugin, ai-agent, mcp, tool-development |
@@ -52,7 +52,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [pygame](frameworks/pygame/SKILL.md) | Python 2D game development - sprites, surfaces, events, sound, fonts, game loops, collision | 549 | python, game-development, 2d-games, pygame, graphics |
 | [PyQt](frameworks/pyqt/SKILL.md) | Desktop applications - PyQt5/PyQt6/PySide6, widgets, signals, layouts, threading, testing | 1,941 | python, qt, pyqt, pyside, gui, desktop, hub |
 |   ↳ [pyqt-core](frameworks/pyqt/core/SKILL.md) | QtCore fundamentals - signals, slots, properties, timers, settings, file I/O | 487 | python, qt, pyqt, core, signals |
-|   ↳ [pyqt-dialogs](frameworks/pyqt/dialogs/SKILL.md) | Dialogs - QFileDialog, QMessageBox, custom dialogs | 409 | python, qt, pyqt, dialogs, ui |
+|   ↳ [pyqt-dialogs](frameworks/pyqt/dialogs/SKILL.md) | Dialogs - QFileDialog, QMessageBox, custom dialogs, Qt 6 | 518 | python, qt, pyqt, dialogs, ui |
 |   ↳ [pyqt-multimedia](frameworks/pyqt/multimedia/SKILL.md) | Audio, video, camera, recording | ~700 | python, qt, pyqt, multimedia, audio, video |
 |   ↳ [pyqt-styling](frameworks/pyqt/styling/SKILL.md) | QSS styling - selectors, properties, dark theme | 668 | python, qt, pyqt, styling, qss, css |
 |   ↳ [pyqt-testing](frameworks/pyqt/testing/SKILL.md) | Testing - pytest-qt, qtbot, waitSignal, fixtures | 444 | python, qt, pyqt, testing, pytest |
@@ -69,7 +69,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 
 | Skill | Description | Lines | Tags |
 |-------|-------------|-------|------|
-| [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, multi-stage builds, production, CI/CD | 389 | docker, docker-compose, containerization, deployment, ci-cd |
+| [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, BuildKit, multi-stage builds, production, CI/CD, security | 432 | docker, docker-compose, containerization, deployment, ci-cd |
 | [Redis](tool/redis/SKILL.md) | In-memory database - caching, pub/sub, sessions, rate limiting, data structures | 315 | redis, database, caching, pub-sub, sessions, rate-limiting |
 | [SQLite](tool/sqlite/SKILL.md) | Embedded database - SQL queries, schema design, Python integration, FTS5, optimization | ~600 | sqlite, database, sql, embedded, python |
 | [Waydroid](tool/waydroid/SKILL.md) | Android on Linux - container-based Android with Wayland, GPU acceleration, GAPPS | ~657 | waydroid, android, container, linux, wayland, gapps |
