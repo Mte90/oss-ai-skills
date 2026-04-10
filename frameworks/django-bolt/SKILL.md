@@ -2497,6 +2497,70 @@ python manage.py runbolt --processes 4
 
 ---
 
+## Best Practices
+
+### API Design
+
+```python
+# ✅ GOOD: Use decorators
+from django_bolt.http import HttpRequest, JsonResponse
+from django_bolt.utils.decorators import json_response
+
+@json_response()
+def get_users(request: HttpRequest) -> JsonResponse:
+    return {"users": []}
+
+# ✅ GOOD: Serializer validation
+from django_bolt.serializers import Serializer
+
+class UserSerializer(Serializer):
+    name: str
+    email: str
+    
+    def validate_email(self, value):
+        if not value.endswith('@company.com'):
+            raise ValidationError("Must use company email")
+        return value
+```
+
+### Error Handling
+
+```python
+from django_bolt.errors import ApiError
+
+# ✅ GOOD: Raise proper errors
+def get_user(request, user_id):
+    user = User.objects.get_or_404(user_id)
+    if not user.is_active:
+        raise ApiError(400, "User not active")
+    return user
+```
+
+### Performance
+
+```python
+# ✅ GOOD: Use built-in caching
+from django_bolt.cache import cache_page
+
+@cache_page(60 * 15)
+def get_data(request):
+    ...
+
+# ✅ GOOD: Query optimization
+users = User.objects.select_related('profile').prefetch_related('posts')
+```
+
+### Do:
+- Use decorators for common patterns
+- Leverage built-in serializers
+- Enable caching for static data
+
+### Don't:
+- Mix Django ORM with Bolt models
+- Skip error handling
+
+---
+
 ## References
 
 - **GitHub**: https://github.com/dj-bolt/django-bolt

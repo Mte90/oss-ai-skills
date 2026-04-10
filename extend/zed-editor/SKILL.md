@@ -1001,6 +1001,59 @@ fn language_server_command(
 }
 ```
 
+## Best Practices
+
+### Extension Structure
+
+```rust
+// ✅ GOOD: Clear module organization
+src/
+├── lib.rs          // Main entry, register languages/themes
+├── language.rs     // Language server implementation
+├── theme.rs        // Color definitions
+└── snippets.rs     // Snippet collections
+
+// ❌ BAD: Everything in one file
+```
+
+### Performance
+
+```rust
+// Cache expensive operations
+fn expensive_computation(&self) -> Result<Value> {
+    if let Some(cached) = &self.cached {
+        return Ok(cached.clone());
+    }
+    // ... compute ...
+}
+
+// Lazy initialization
+fn get_language(&self) -> &Language {
+    self.language.get_or_init(|| /* ... */)
+}
+```
+
+### Testing
+
+```rust
+// Test extension loads correctly
+#[test]
+fn test_extension_loads() {
+    let ext = MyExtension::new();
+    assert!(ext.activate().is_ok());
+}
+```
+
+### Do:
+- Keep extension size under 1MB
+- Use async for I/O operations
+- Test on multiple Zed versions
+
+### Don't:
+- Block the main thread
+- Use heavy dependencies
+- Hardcode paths (use API methods)
+
 ---
 
 ## References

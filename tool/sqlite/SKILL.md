@@ -520,6 +520,113 @@ sqlite3 myapp.db ".tables"
 sqlite3 myapp.db ".schema users"
 ```
 
+## Best Practices
+
+### Essential PRAGMA Settings
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('app.db')
+
+# Performance
+conn.execute("PRAGMA journal_mode = WAL")      # Write-Ahead Logging
+conn.execute("PRAGMA synchronous = NORMAL")    # Balance safety/speed
+conn.execute("PRAGMA cache_size = -64000")      # 64MB cache
+conn.execute("PRAGMA temp_store = MEMORY")     # Temp tables in memory
+conn.execute("PRAGMA mmap_size = 268435456")    # 256MB memory map
+
+# Safety
+conn.execute("PRAGMA foreign_keys = ON")       # Enforce FK constraints
+conn.execute("PRAGMA busy_timeout = 5000")      # Wait 5s on lock
+
+# Always enable WAL mode for concurrent access
+# Benefits: better concurrency, atomic writes, faster reads
+```
+
+### Connection Management
+
+```python
+# Use context manager (auto-commits/rollbacks)
+with sqlite3.connect('app.db') as conn:
+    conn.execute("INSERT INTO users VALUES (?, ?)", (name, email))
+    # Auto-commits, auto-closes
+
+# Row factory for column access
+conn.row_factory = sqlite3.Row  # Access by name: row['column']
+
+# Never leave connections open
+# For web apps: create per-request, close after response
+```
+
+### Performance Tips
+
+```python
+# Use executemany for bulk inserts
+data = [(f"user{i}", f"email{i}@test.com") for i in range(1000)]
+conn.executemany("INSERT INTO users (name, email) VALUES (?, ?)", data)
+
+# Disable sync for bulk loads
+conn.execute("PRAGMA synchronous = OFF")
+# ... bulk insert ...
+conn.execute("PRAGMA synchronous = NORMAL")
+
+# Create indexes after data load (faster)
+# CREATE INDEX IF NOT EXISTS idx_user_email ON users(email);
+
+# Use EXPLAIN QUERY PLAN to analyze queries
+```
+
+### Thread Safety
+
+```python
+# Each thread needs its own connection
+# ❌ BAD: Shared connection
+# conn = sqlite3.connect('app.db')  # Don't share across threads
+
+# ✅ GOOD: Thread-local connections
+import threading
+thread_local = threading.local()
+
+def get_db():
+    if not hasattr(thread_local, 'conn'):
+        thread_local.conn = sqlite3.connect('app.db')
+    return thread_local.conn
+```
+
+### Key Patterns
+
+```python
+# Use parameterized queries (prevent SQL injection)
+# ✅ GOOD
+cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+
+# ❌ BAD - vulnerable to SQL injection
+cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+
+# Use INTEGER PRIMARY KEY for auto-increment
+# Don't use TEXT PRIMARY KEY (slower)
+
+# Add indexes on foreign keys and WHERE columns
+# CREATE INDEX idx_orders_user ON orders(user_id);
+```
+
+### Do:
+
+- Enable WAL mode for concurrent access
+- Always use parameterized queries
+- Set busy_timeout for handling locks
+- Use context managers for connections
+
+### Don't:
+
+- Use strings for PRIMARY KEY when INTEGER suffices
+- Run ANALYZE after every write (do it periodically)
+- Use database file on network drives (slow)
+- Forget to enable foreign keys (they're off by default)
+
+---
+
 ## References
 
 - **SQLite Docs**: https://www.sqlite.org/docs.html

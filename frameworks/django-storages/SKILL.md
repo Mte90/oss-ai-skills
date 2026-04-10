@@ -638,6 +638,56 @@ def upload_path(instance, filename):
 
 ---
 
+## Best Practices
+
+### Security
+
+```python
+# ✅ GOOD: Don't hardcode credentials
+# settings.py - use environment variables
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
+# ✅ GOOD: Use bucket policies
+# Restrict public access, use VPC endpoints
+```
+
+### Performance
+
+```python
+# ✅ GOOD: Use appropriate storage class
+STORAGE_BACKEND = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_CLASS = 'STANDARD_IA'  # Infrequent access
+
+# ✅ GOOD: Enable caching
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+```
+
+### File Handling
+
+```python
+# ✅ GOOD: Use FileField with storage
+from django.db import models
+
+class Document(models.Model):
+    file = models.FileField(storage=s3_storage)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+# ✅ GOOD: Generate signed URLs
+url = s3_storage.url(file.name, parameters={'ResponseContentDisposition': 'attachment'})
+```
+
+### Do:
+- Use environment variables for credentials
+- Set proper caching headers
+- Use signed URLs for private files
+
+### Don't:
+- Store credentials in code
+- Use public buckets for sensitive data
+
 ## References
 
 - **Documentation**: https://django-storages.readthedocs.io/
