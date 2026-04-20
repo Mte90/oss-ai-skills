@@ -2,7 +2,7 @@
 name: pyqt-threading
 description: "PyQt/PySide6 threading and concurrency - QThread, QThreadPool, QTimer, thread safety, concurrent patterns"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - python

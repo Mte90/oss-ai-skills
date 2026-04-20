@@ -2,7 +2,7 @@
 name: bpcore-engine
 description: "BPCore Engine - Lua game framework for Gameboy Advance with sprites, tilemaps, entities, collision, audio, multiplayer"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - lua

@@ -12,7 +12,7 @@ description: >
   DO NOT TRIGGER when: user wants functional/behavioral testing (use Playwright skill),
   just wants a single screenshot (use screenshots skill), or asks about accessibility.
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   based_on: https://github.com/maxrihter/claude-skill-visual-regression
   tags:

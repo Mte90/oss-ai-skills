@@ -2,7 +2,7 @@
 name: tailwind
 description: Utility-first CSS framework v4 with CSS-first configuration, @theme directive, and the new Oxide engine.
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 2.1.0
   tags: [css, tailwind, v4, utility-first, oxide-engine]
 ---

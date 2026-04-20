@@ -2,7 +2,7 @@
 name: pytest
 description: "Python testing framework with powerful fixtures, parametrization, extensive plugin ecosystem, and support for async, Django, Flask testing"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - python

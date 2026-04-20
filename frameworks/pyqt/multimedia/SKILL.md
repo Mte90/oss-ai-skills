@@ -2,7 +2,7 @@
 name: pyqt-multimedia
 description: "PyQt/PySide multimedia - audio playback, video playback, camera, audio recording, media player"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - python

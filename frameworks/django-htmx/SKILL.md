@@ -2,7 +2,7 @@
 name: django-htmx
 description: "Build modern dynamic web applications with Django and htmx - partial rendering, HTMX-specific responses, and seamless frontend integration"
 metadata:
-  author: "MTE90"
+  author: mte90
   version: 1.0.0
   tags:
     - django

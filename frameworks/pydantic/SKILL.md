@@ -2,7 +2,7 @@
 name: pydantic
 description: "Data validation using Python type hints with Pydantic models, settings, serialization, and performance optimization"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - python

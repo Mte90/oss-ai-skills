@@ -2,7 +2,7 @@
 name: openrct2-plugin
 description: "Develop plugins for OpenRCT2 - JavaScript/TypeScript scripting, game actions, UI windows, hooks, multiplayer sync"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - openrct2

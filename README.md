@@ -65,10 +65,12 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework v4 - CSS-first config, @theme directive, Oxide engine | 540 | css, frontend, responsive, design-system, utility-first |
 | [TurboDRF](frameworks/turbodrf/SKILL.md) | Fast Django REST framework - automatic OpenAPI, caching, JWT auth | ~600 | python, django, rest-api, openapi, fast |
 | [Django HTMX](frameworks/django-htmx/SKILL.md) | Build modern dynamic web apps with Django and htmx - partial rendering, HTMX-specific responses, template tags, middleware, CSRF protection | 415 | django, htmx, python, web, frontend, partial-rendering |
+| [django-filter](frameworks/django-filter/SKILL.md) | Django filtering library - querysets, DRF integration, custom filters, FilterSet | 451 | django, django-filter, filtering, django-rest-framework, queryset |
 ### Tool
 
 | Skill | Description | Lines | Tags |
 |-------|-------------|-------|------|
+| [ast-grep](tool/ast-grep/SKILL.md) | AST-based code search and rewriting - structural patterns, linting, refactoring, multi-language | 531 | ast-grep, code-search, linting, refactoring, cli, ast |
 | [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, BuildKit, multi-stage builds, production, CI/CD, security | 432 | docker, docker-compose, containerization, deployment, ci-cd |
 | [Redis](tool/redis/SKILL.md) | In-memory database - caching, pub/sub, sessions, rate limiting, data structures | 315 | redis, database, caching, pub-sub, sessions, rate-limiting |
 | [SQLite](tool/sqlite/SKILL.md) | Embedded database - SQL queries, schema design, Python integration, FTS5, optimization, concurrent access | 814 | sqlite, database, sql, embedded, python |

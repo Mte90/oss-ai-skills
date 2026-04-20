@@ -2,7 +2,7 @@
 name: sqlalchemy
 description: "Python SQL toolkit and ORM with expressive query API, relationship mapping, async support, and Alembic migrations"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - python

@@ -2,7 +2,7 @@
 name: ratatui
 description: "Rust terminal UI framework - widgets, components, layouts, events, input handling, and state management for TUI apps"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - rust

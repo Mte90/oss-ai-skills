@@ -2,7 +2,7 @@
 name: turbadrf
 description: "TurboDRF - fast Django REST framework with automatic OpenAPI, serializers, views, routers, and caching"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - python

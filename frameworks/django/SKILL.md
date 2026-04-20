@@ -2,7 +2,7 @@
 name: django-security
 description: "Django security - CSRF protection, authentication, sessions, login/logout, password handling, middleware, protected views"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - python

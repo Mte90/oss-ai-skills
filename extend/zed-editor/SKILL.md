@@ -2,7 +2,7 @@
 name: zed-editor
 description: "Zed Editor extensions - Rust/Wasm plugins, LSP servers, Tree-sitter grammars, themes, MCP servers, slash commands, debug adapters"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - zed

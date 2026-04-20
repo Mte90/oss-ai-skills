@@ -2,7 +2,7 @@
 name: django-bolt
 description: "Django Bolt - Rust-powered high-performance API framework, 60k+ RPS, decorator routing, built-in auth, async ORM"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - python

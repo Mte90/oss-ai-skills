@@ -2,7 +2,7 @@
 name: sqlite
 description: "SQLite - embedded database, SQL queries, schema design, Python integration, optimization"
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - sqlite

@@ -2,7 +2,7 @@
 name: kde-plasmoid
 description: Guide for developing KDE Plasma widgets (Plasmoids) with Python backend and QML UI, including metadata configuration, installation, and KDE Store distribution.
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - kde

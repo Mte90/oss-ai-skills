@@ -2,7 +2,7 @@
 name: pyqt
 description: "PyQt/PySide6 overview hub - installation, comparison, project structure. See sub-skills for detailed topics."
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 2.0.0
   tags:
     - python

@@ -2,7 +2,7 @@
 name: kate-plugin
 description: "Develop C++ plugins for Kate text editor - KTextEditor interface, CMake, Qt widgets, action system"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - kate

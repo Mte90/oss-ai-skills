@@ -2,7 +2,7 @@
 name: rust-common-pitfalls
 description: "Common Rust development pitfalls: frequent compiler errors, struct constructor patterns, test organization, and coverage enforcement for reliable codebases."
 metadata:
-  author: "Mte90"
+  author: mte90
   version: "1.0.0"
   tags:
     - rust

@@ -2,7 +2,7 @@
 name: aiohttp
 description: "Async HTTP server and client for Python with WebSocket support, middleware, streaming, and server-sent events"
 metadata:
-  author: "OSS AI Skills"
+  author: mte90
   version: "1.0.0"
   tags:
     - python

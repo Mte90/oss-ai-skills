@@ -2,7 +2,7 @@
 name: wordpress
 description: Comprehensive guide for contributing to WordPress core development, including environment setup, coding standards, hooks system, database API, REST API, testing, and Trac workflow.
 metadata:
-  author: OSS AI Skills
+  author: mte90
   version: 1.0.0
   tags:
     - wordpress
