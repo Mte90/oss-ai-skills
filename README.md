@@ -64,15 +64,21 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [SQLAlchemy](frameworks/sqlalchemy/SKILL.md) | Python SQL toolkit and ORM - queries, relationships, async, Alembic migrations | 1,179 | python, orm, database, sql, alembic, async |
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework v4 - CSS-first config, @theme directive, Oxide engine | 540 | css, frontend, responsive, design-system, utility-first |
 | [TurboDRF](frameworks/turbodrf/SKILL.md) | Fast Django REST framework - automatic OpenAPI, caching, JWT auth | ~600 | python, django, rest-api, openapi, fast |
-
+| [Django HTMX](frameworks/django-htmx/SKILL.md) | Build modern dynamic web apps with Django and htmx - partial rendering, HTMX-specific responses, template tags, middleware, CSRF protection | 415 | django, htmx, python, web, frontend, partial-rendering |
 ### Tool
 
 | Skill | Description | Lines | Tags |
 |-------|-------------|-------|------|
 | [Docker](tool/docker/SKILL.md) | Containers - Dockerfile, docker-compose, BuildKit, multi-stage builds, production, CI/CD, security | 432 | docker, docker-compose, containerization, deployment, ci-cd |
 | [Redis](tool/redis/SKILL.md) | In-memory database - caching, pub/sub, sessions, rate limiting, data structures | 315 | redis, database, caching, pub-sub, sessions, rate-limiting |
-| [SQLite](tool/sqlite/SKILL.md) | Embedded database - SQL queries, schema design, Python integration, FTS5, optimization | ~600 | sqlite, database, sql, embedded, python |
+| [SQLite](tool/sqlite/SKILL.md) | Embedded database - SQL queries, schema design, Python integration, FTS5, optimization, concurrent access | 814 | sqlite, database, sql, embedded, python |
 | [Waydroid](tool/waydroid/SKILL.md) | Android on Linux - container-based Android with Wayland, GPU acceleration, GAPPS | ~657 | waydroid, android, container, linux, wayland, gapps |
+
+### Languages
+
+| Skill | Description | Lines | Tags |
+|-------|-------------|-------|------|
+| [Rust Common Pitfalls](languages/rust-common-pitfalls/SKILL.md) | Common Rust development pitfalls - compiler errors, struct constructors, test organization, coverage enforcement | 730 | rust, pitfalls, best-practices, common-errors, testing |
 
 ## Skill Format
 

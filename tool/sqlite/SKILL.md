@@ -632,3 +632,182 @@ cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
 - **SQLite Docs**: https://www.sqlite.org/docs.html
 - **SQLite Python**: https://docs.python.org/3/library/sqlite3.html
 - **SQL As Understood By SQLite**: https://www.sqlite.org/lang.html
+- **SQLite WAL**: https://www.sqlite.org/wal.html
+- **SQLite Limits**: https://www.sqlite.org/limits.html
+- **Corruption FAQ**: https://www.sqlite.org/lockingv3.html
+- **OpenCode Issue #21215**: concurrent sessions crash with SQLITE_BUSY
+- **OpenCode Issue #21790**: sessions lost due to failed migration
+
+---
+
+## Concurrent Access & Locking Issues
+
+### The Problem: WAL Mode and Concurrency
+
+WAL (Write-Ahead Logging) allows concurrent readers but **only ONE writer at a time**:
+
+```python
+# Problem: with busy_timeout=0, writers fail immediately
+# SQLiteError: database is locked
+
+# Solution: set appropriate busy_timeout
+conn.execute("PRAGMA busy_timeout = 5000")  # 5 seconds retry
+```
+
+### Best Practices for Concurrent Access
+
+```python
+import sqlite3
+
+def get_connection(db_path):
+    conn = sqlite3.connect(db_path)
+
+    # Performance
+    conn.execute("PRAGMA journal_mode = WAL")
+    conn.execute("PRAGMA synchronous = NORMAL")
+    conn.execute("PRAGMA cache_size = -64000")
+
+    # CRITICAL for concurrency
+    conn.execute("PRAGMA busy_timeout = 5000")
+
+    # Safety
+    conn.execute("PRAGMA foreign_keys = ON")
+
+    return conn
+```
+
+### Isolation for Multiple Instances
+
+To avoid contention in applications with multiple instances:
+
+```python
+import os
+
+# Use XDG_DATA_HOME isolation for separate sessions
+# Example: opencode run with multiple workers
+os.environ['XDG_DATA_HOME'] = f'/tmp/opencode-{os.getpid()}'
+# Each worker has its own DB
+```
+---
+
+## Database Corruption Recovery
+
+### Signs of Corruption
+
+```
+SQLiteError: database disk image is malformed
+SQLiteError: file is not a database
+SQLITE_CANTOPEN: unable to open database file
+```
+
+### Recovery Procedure
+
+```bash
+# 1. Make backup
+cp corrupted.db corrupted.db.bak
+
+# 2. Validate the database
+sqlite3 corrupted.db "PRAGMA integrity_check;"
+# Output: ok (if all good) or list of errors
+
+# 3. Try to recover data
+sqlite3 corrupted.db ".recover" | sqlite3 new.db
+
+# 4. If it doesn't work, dump and rebuild
+sqlite3 corrupted.db ".dump" 2>/dev/null | sqlite3 rebuilt.db
+```
+
+### Corruption Prevention
+
+```python
+# 1. Always use WAL mode (not DELETE) for consistency
+conn.execute("PRAGMA journal_mode = WAL")
+
+# 2. Clean close - don't kill process
+# Use context manager
+with sqlite3.connect('app.db') as conn:
+    # work
+# Auto-close guaranteed
+
+# 3. Regular backups
+def backup_db(src, dst):
+    src_conn = sqlite3.connect(src)
+    dst_conn = sqlite3.connect(dst)
+    src_conn.backup(dst_conn)
+    dst_conn.close()
+    src_conn.close()
+```
+
+---
+
+## Large Database Maintenance
+
+### Size Monitoring
+
+```python
+import os
+
+def get_db_size(db_path):
+    """Returns size in MB"""
+    return os.path.getsize(db_path) / (1024 * 1024)
+
+# Example: real OpenCode database
+# Size: 1214 MB
+# Sessions: 1542
+# Messages: 61873
+# Parts: 253442
+
+db_size = get_db_size('app.db')
+print(f"Database size: {db_size:.1f} MB")
+
+if db_size > 1000:
+    print("WARNING: Database > 1GB, consider maintenance")
+```
+
+### Periodic Maintenance
+
+```python
+def maintain_database(conn):
+    """Call periodically or after many writes"""
+
+    # VACUUM: rebuild and compact the database
+    # Reduces size, rebuilds indexes
+    conn.execute("VACUUM")
+
+    # ANALYZE: update statistics for query planner
+    # Useful after many INSERT/UPDATE/DELETE
+    conn.execute("ANALYZE")
+
+    # Check integrity
+    result = conn.execute("PRAGMA integrity_check").fetchone()
+    if result[0] != 'ok':
+        print(f"WARNING: {result[0]}")
+
+# Schedule: weekly or after N write operations
+# NOTE: VACUUM doesn't work in transaction
+```
+
+### Statistics Queries
+
+```sql
+-- Basic statistics
+SELECT 'Sessions:' as label, COUNT(*) FROM session;
+SELECT 'Messages:' as label, COUNT(*) FROM message;
+SELECT 'Parts:' as label, COUNT(*) FROM part;
+
+-- Old sessions (>30 days)
+SELECT COUNT(*) FROM session
+WHERE time_updated < (strftime('%s', 'now') - 30*86400)*1000;
+
+-- Orphan records (without relationships)
+SELECT COUNT(*) FROM message m
+LEFT JOIN session s ON m.session_id = s.id
+WHERE s.id IS NULL;
+
+SELECT COUNT(*) FROM part p
+LEFT JOIN message m ON p.message_id = m.id
+WHERE m.id IS NULL;
+
+-- Todo by status
+SELECT status, COUNT(*) FROM todo GROUP BY status;
+```
