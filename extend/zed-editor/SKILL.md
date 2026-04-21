@@ -1048,11 +1048,15 @@ fn test_extension_loads() {
 - Keep extension size under 1MB
 - Use async for I/O operations
 - Test on multiple Zed versions
+- **Always verify crate versions on [crates.io](https://crates.io)** before adding dependencies — Rust's strict semver means a wrong version can cascade into hundreds of compile errors. Check `zed_extension_api` and any third-party crate versions explicitly
+- **Inform the user when including libraries from third-party repositories** and let them check versions. Highlight files and lines where you include such dependencies so the user can double-check
+- When generating `Cargo.toml` dependencies, mark version numbers as approximate and advise the user to run `cargo check` immediately to verify compatibility
 
 ### Don't:
 - Block the main thread
 - Use heavy dependencies
 - Hardcode paths (use API methods)
+- Assume a crate version compiles without verifying — always recommend the user runs `cargo check` after dependency changes
 
 ---
 

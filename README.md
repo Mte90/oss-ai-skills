@@ -30,7 +30,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [Playwright Visual Regression](frameworks/playwright-visual-regression/SKILL.md) | Visual regression testing with Playwright - toHaveScreenshot(), Python/TS, VUDA MCP, masking, thresholds, CI/CD | 1,056 | playwright, visual-regression, screenshot, testing, e2e, vuda, vrt |
 | [Thunderbird Extension](extend/thunderbird-extension/SKILL.md) | Build MailExtensions for Thunderbird - messenger.* APIs, compose, ATN | 1,067 | thunderbird, mailextension, email-extension, mozilla, atn, messenger-api |
 | [Vagrant](extend/vagrant/SKILL.md) | Development environments - providers, provisioners, multi-machine, plugins, troubleshooting | 1,097 | vagrant, virtualization, devops, virtualbox, infrastructure |
-| [Zed Editor](extend/zed-editor/SKILL.md) | Zed extensions - Rust/Wasm plugins, LSP, Tree-sitter, themes, MCP servers, slash commands | 1,012 | zed, editor, extension, rust, wasm, tree-sitter, lsp, plugin |
+| [Zed Editor](extend/zed-editor/SKILL.md) | Zed extensions - Rust/Wasm plugins, LSP, Tree-sitter, themes, MCP servers, slash commands, crate version guidance | 1,069 | zed, editor, extension, rust, wasm, tree-sitter, lsp, plugin |
 
 ### Frameworks
 
@@ -40,12 +40,14 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | [BPCore Engine](frameworks/bpcore-engine/SKILL.md) | Lua game framework for GBA - sprites, entities, collision, audio, multiplayer | ~1,100 | lua, gba, game-engine, gameboy-advance |
 | [Celery](frameworks/celery/SKILL.md) | Distributed task queue - Redis/RabbitMQ brokers, periodic tasks, Django integration | 1,250 | python, task-queue, async, distributed, celery |
 | [Django](frameworks/django/SKILL.md) | Web applications - ORM, views, DRF, middleware, caching, async views, deployment, security, Django 6.0 | 1,499 | python, django, web-framework, orm, rest-api, drf, async, hub |
-| [Django Celery](frameworks/django-celery/SKILL.md) | Django Celery integration - distributed tasks, django-celery-beat scheduling, monitoring | ~700 | python, django, celery, task-queue, periodic-tasks, django-celery-beat |
 | [Django Bolt](frameworks/django-bolt/SKILL.md) | Rust-powered high-performance API framework - 60k+ RPS, decorator routing, built-in auth, async ORM | 2,503 | python, django, bolt, api, rust, performance, async |
+| [Django Celery](frameworks/django-celery/SKILL.md) | Django Celery integration - distributed tasks, django-celery-beat scheduling, monitoring | ~700 | python, django, celery, task-queue, periodic-tasks, django-celery-beat |
+| [Django HTMX](frameworks/django-htmx/SKILL.md) | Build modern dynamic web apps with Django and htmx - partial rendering, HTMX-specific responses, template tags, middleware, CSRF protection | 415 | django, htmx, python, web, frontend, partial-rendering |
 | [Django Ninja](frameworks/django-ninja/SKILL.md) | Fast REST APIs with Pydantic - schemas, authentication, pagination, OpenAPI docs | 1,869 | python, django, rest-api, pydantic, openapi, type-safe |
 | [Django Storages](frameworks/django-storages/SKILL.md) | Django cloud storage - S3, Azure, Google Cloud, boto3, file storage backends | ~800 | python, django, storage, s3, azure, gcs, cloud |
 | [Django Unfold](frameworks/django-unfold/SKILL.md) | Modern Django admin theme - customization, components, actions, filters, integrations | 653 | python, django, admin, unfold, theme, dashboard |
 | [django-allauth](frameworks/django-allauth/SKILL.md) | django-allauth package - local accounts, OAuth, email verification, MFA | ~700 | python, django, authentication, oauth, mfa, allauth |
+| [django-filter](frameworks/django-filter/SKILL.md) | Django filtering library - querysets, DRF integration, custom filters, FilterSet | 451 | django, django-filter, filtering, django-rest-framework, queryset |
 | [httpx](frameworks/httpx/SKILL.md) | Modern async HTTP client - sync/async API, HTTP/2, connection pooling, retries | ~1,500 | python, http, async, client, network |
 | [LlamaIndex](frameworks/llama-index/SKILL.md) | LLM applications - RAG, retrievers, agents, vector stores, streaming, evaluation | 1,130 | python, llm, rag, llamaindex, ai, vector-store, agents |
 | [Pydantic](frameworks/pydantic/SKILL.md) | Data validation - type hints, models, serialization, settings, FastAPI | ~1,700 | python, validation, pydantic, serialization, settings |
@@ -60,12 +62,11 @@ This repository provides reusable skill definitions that can be loaded into AI c
 |   ↳ [pyqt-widgets](frameworks/pyqt/widgets/SKILL.md) | QtWidgets - buttons, inputs, containers, item views, layouts | 610 | python, qt, pyqt, widgets, gui |
 | [pytest](frameworks/pytest/SKILL.md) | Python testing framework - fixtures, parametrization, asyncio, Django, mocking, coverage, parallel | 1,481 | python, testing, tdd, fixtures, unit-test |
 | [Qt C++](frameworks/qt-cpp/SKILL.md) | Cross-platform desktop apps - signals/slots, QML, threading, CMake, deployment | 1,204 | qt, c++, gui, desktop, qt6, cmake, cross-platform, qml |
-| [ratatui](frameworks/ratatui/SKILL.md) | Rust TUI framework - terminal UI, widgets, layouts, event handling, cross-platform | 651 | rust, tui, terminal, cli, user-interface |
+| [ratatui](frameworks/ratatui/SKILL.md) | Rust TUI framework - widgets, layouts, ecosystem (tachyonfx, mousefood, ratzilla), recipes, backends | 1,277 | rust, tui, terminal, cli, user-interface, ecosystem |
 | [SQLAlchemy](frameworks/sqlalchemy/SKILL.md) | Python SQL toolkit and ORM - queries, relationships, async, Alembic migrations | 1,179 | python, orm, database, sql, alembic, async |
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework v4 - CSS-first config, @theme directive, Oxide engine | 540 | css, frontend, responsive, design-system, utility-first |
 | [TurboDRF](frameworks/turbodrf/SKILL.md) | Fast Django REST framework - automatic OpenAPI, caching, JWT auth | ~600 | python, django, rest-api, openapi, fast |
-| [Django HTMX](frameworks/django-htmx/SKILL.md) | Build modern dynamic web apps with Django and htmx - partial rendering, HTMX-specific responses, template tags, middleware, CSRF protection | 415 | django, htmx, python, web, frontend, partial-rendering |
-| [django-filter](frameworks/django-filter/SKILL.md) | Django filtering library - querysets, DRF integration, custom filters, FilterSet | 451 | django, django-filter, filtering, django-rest-framework, queryset |
+
 ### Tool
 
 | Skill | Description | Lines | Tags |
