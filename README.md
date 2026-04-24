@@ -62,7 +62,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 |   ↳ [pyqt-widgets](frameworks/pyqt/widgets/SKILL.md) | QtWidgets - buttons, inputs, containers, item views, layouts | 610 | python, qt, pyqt, widgets, gui |
 | [pytest](frameworks/pytest/SKILL.md) | Python testing framework - fixtures, parametrization, asyncio, Django, mocking, coverage, parallel | 1,481 | python, testing, tdd, fixtures, unit-test |
 | [Qt C++](frameworks/qt-cpp/SKILL.md) | Cross-platform desktop apps - signals/slots, QML, threading, CMake, deployment | 1,204 | qt, c++, gui, desktop, qt6, cmake, cross-platform, qml |
-| [ratatui](frameworks/ratatui/SKILL.md) | Rust TUI framework - widgets, layouts, ecosystem (tachyonfx, mousefood, ratzilla), recipes, backends | 1,277 | rust, tui, terminal, cli, user-interface, ecosystem |
+| [ratatui](frameworks/ratatui/SKILL.md) | Rust TUI framework - widgets, layouts, design principles, accessibility, MVU architecture, ecosystem, recipes | 2,099 | rust, tui, terminal, cli, user-interface, ecosystem |
 | [SQLAlchemy](frameworks/sqlalchemy/SKILL.md) | Python SQL toolkit and ORM - queries, relationships, async, Alembic migrations | 1,179 | python, orm, database, sql, alembic, async |
 | [Tailwind CSS](frameworks/tailwind/SKILL.md) | Utility-first CSS framework v4 - CSS-first config, @theme directive, Oxide engine | 540 | css, frontend, responsive, design-system, utility-first |
 | [TurboDRF](frameworks/turbodrf/SKILL.md) | Fast Django REST framework - automatic OpenAPI, caching, JWT auth | ~600 | python, django, rest-api, openapi, fast |
