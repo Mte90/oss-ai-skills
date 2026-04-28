@@ -1,12 +1,12 @@
 # OSS AI Skills Collection
-[![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)   
+[![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 A comprehensive collection of AI assistant skills (SKILL.md files) following the [skillreg.dev](https://skillreg.dev/docs/skill-md-reference) specification, designed to help contribute to and extend open-source projects (for plugins).
 *Note: we test the majority of them and improving based on asking to the agents to extend the skills based on their experience.*
 
 ## What is this?
 
-This repository provides reusable skill definitions that can be loaded into AI coding assistants. Each skill encapsulates domain knowledge, best practices, and workflows for specific tasks in open-source development. 
+This repository provides reusable skill definitions that can be loaded into AI coding assistants. Each skill encapsulates domain knowledge, best practices, and workflows for specific tasks in open-source development.
 
 ## Available Skills
 
@@ -37,6 +37,7 @@ This repository provides reusable skill definitions that can be loaded into AI c
 | Skill | Description | Lines | Tags |
 |-------|-------------|-------|------|
 | [aiohttp](frameworks/aiohttp/SKILL.md) | Async HTTP server/client - WebSocket, SSE, middleware, streaming | ~1,700 | python, http, async, server, websocket, sse |
+| [android-apk-patch](frameworks/android-apk-patch/SKILL.md) | Modify, repackage, test Android APKs - split APK handling, GApps workarounds, signing, Frida instrumentation, redroid/Waydroid testing | 1,548 | android, apk, patching, smali, signing, split-apk, gapps, frida, redroid, waydroid |
 | [BPCore Engine](frameworks/bpcore-engine/SKILL.md) | Lua game framework for GBA - sprites, entities, collision, audio, multiplayer | ~1,100 | lua, gba, game-engine, gameboy-advance |
 | [Celery](frameworks/celery/SKILL.md) | Distributed task queue - Redis/RabbitMQ brokers, periodic tasks, Django integration | 1,250 | python, task-queue, async, distributed, celery |
 | [Django](frameworks/django/SKILL.md) | Web applications - ORM, views, DRF, middleware, caching, async views, deployment, security, Django 6.0 | 1,499 | python, django, web-framework, orm, rest-api, drf, async, hub |
